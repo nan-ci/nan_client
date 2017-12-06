@@ -1,4 +1,4 @@
-package NaN.Terminal is
+package Terminal is
 
    procedure Set (Device_Path : String);
 
@@ -8,4 +8,4 @@ package NaN.Terminal is
 
    procedure Unset_Features;
 
-end NaN.Terminal;
+end Terminal;

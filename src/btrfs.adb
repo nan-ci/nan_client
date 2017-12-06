@@ -1,5 +1,5 @@
-with Ada.Calendar.Formatting, Ada.Calendar.Time_Zones, Ada.Strings.Wide_Wide_Fixed, Ada.Strings.Wide_Wide_Maps, Ada.Directories, NaN, Ada.Streams.Stream_IO, Log, Lib.File, Lib.Process, Lib.Sets, Lib.Text, Ada.Text_IO;
-use Lib, NaN; with Lib.Strings; use Lib.Strings;
+with Ada.Calendar.Formatting, Ada.Calendar.Time_Zones, Ada.Strings.Wide_Wide_Fixed, Ada.Strings.Wide_Wide_Maps, Ada.Directories, Ada.Streams.Stream_IO, Log, Lib.File, Lib.Process, Lib.Sets, Lib.Text, Ada.Text_IO;
+use Lib; with Lib.Strings; use Lib.Strings;
 
 package body Btrfs is
 

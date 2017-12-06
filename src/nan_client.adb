@@ -1,7 +1,7 @@
 with Ada.Containers, Ada.Environment_Variables, Ada.Directories, Ada.Text_IO, Lib.Console, Lib.Text,
-     Lib.Locking, Lib.Process, Lib.File, Btrfs, Log, NaN.Terminal, NaN.Logo, Empty_Stream, Lib.File, Lib.Term,
+     Lib.Locking, Lib.Process, Lib.File, Btrfs, Log, Terminal, NaN_Logo, Empty_Stream, Lib.File, Lib.Term,
      Lib.Sets, GNAT.OS_Lib;
-use Lib, NaN;
+use Lib;
 
 procedure NaN_Client is
 
@@ -54,14 +54,14 @@ begin
    File.Exclude (Log_Path);
 --     Env.Iterate (Print'Access);
 --     NaN.Terminal.Set ("/dev/pts/0");
-   NaN.Terminal.Undef_Keys;
-   NaN.Terminal.Unset_Features;
+   Terminal.Undef_Keys;
+   Terminal.Unset_Features;
    Log (Log_Path, "locking");
    Client_Lock.Create (Lock_Path);
    Log (Log_Path, "locked");
-   NaN.Terminal.Get_Size (Width  => Console.Width,
-                          Height => Console.Height);
-   NaN.Logo.Print;
+   Terminal.Get_Size (Width  => Console.Width,
+                      Height => Console.Height);
+   NaN_Logo.Print;
 
    loop <<Continue>>
       Console.Clear;

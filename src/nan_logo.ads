@@ -1,4 +1,4 @@
-package NaN.Logo is
+package NaN_Logo is
 
    procedure Print;
 
@@ -28,4 +28,4 @@ private
        " 888   Y8888   888   888   888   Y8888 ",
        "88888   Y888   ""Y88888""88 88888   Y888 ");
 
-end NaN.Logo;
+end NaN_Logo;

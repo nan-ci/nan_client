@@ -1,7 +1,7 @@
 with Ada.Text_IO, Lib.Console, Lib.Term;
 use Lib;
 
-package body NaN.Logo is
+package body NaN_Logo is
 
    package TIO renames Ada.Text_IO;
 
@@ -26,4 +26,4 @@ package body NaN.Logo is
       Console.Set_Origin;
    end Print;
 
-end NaN.Logo;
+end NaN_Logo;

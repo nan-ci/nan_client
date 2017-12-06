@@ -1,7 +1,7 @@
 with Lib.Console, Lib.Text, Lib.Sets, Lib.Process, Ada.Strings.Wide_Wide_Maps, Lib.Strings, Ada.Strings.Wide_Wide_Fixed, Ada.Wide_Wide_Text_IO;
 use Lib, Lib.Strings;
 
-package body NaN.Terminal is
+package body Terminal is
 
    package Maps renames Ada.Strings.Wide_Wide_Maps;
    package Fixed renames Ada.Strings.Wide_Wide_Fixed;
@@ -57,4 +57,4 @@ package body NaN.Terminal is
 
 begin
    Path.Set (Str'("/dev/tty1"));
-end NaN.Terminal;
+end Terminal;
