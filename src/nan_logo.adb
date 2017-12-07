@@ -11,7 +11,7 @@ package body NaN_Logo is
    begin
       Console.Set_Origin (X => (Console.Width + 1) / 2 - Text (1)'Length / 2,
                           Y => Console.Height / 6);
-      TIO.Put (Term.Default & Term.Cursor_Off & Term.Clear_Screen & Term.Fore (Gray));
+      TIO.Put (Term.Clear_Screen);
       Console.Reset;
 
       for Line of Logo loop
