@@ -15,15 +15,13 @@ procedure NaN_Client is
    use type Char_Set;
    use type Ada.Containers.Count_Type;
 
-   type Cfg_Key is (Host, Skeleton_Path);
+   type Cfg_Key is (Host, User);
 
    package Cfg is new Config (Path => "nan_client.cfg",
                               Key  => Cfg_Key);
 
    Username : Text.T (39);
    Password : Text.T (72);
-
-   Home : Text.T (255);
 
    Log_Path    : constant Str := "/run/nan_client.log";
    Lock_Path   : constant Str := "/run/nan_client.lock";
@@ -107,15 +105,17 @@ begin
       end if;
 
       User_Lock.Create ("/run/nan_client_" & Username.Get & ".lock");
-      Home.Set ("/home/" & Username.Get);
 
-      if not File.Exists (Home.Get) then
-         Process.Spawn ("useradd --user-group --create-home --skel " & Cfg.Get (Skeleton_Path)
-                        & " --shell /bin/bash " & Username.Get, Raise_Error => False);
+      if Cfg.Get (User) /= "" then
+         Username.Set (Cfg.Get (User));
       end if;
+
+      Process.Spawn ("useradd --user-group --create-home --skel /root/user --shell /bin/bash " & Username.Get,
+                     Raise_Error => False);
 
 --        set rights
 --        Syncing.Start;
+
       Console.Clear;
 
       if not Process.Spawn ("su -l " & Username.Get & " -c startx\ --\ -quiet") then
