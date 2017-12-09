@@ -1,9 +1,8 @@
-with Lib.Console, Lib.Text, Lib.Sets, Lib.Process, Ada.Strings.Wide_Wide_Maps, Lib.Strings, Ada.Strings.Wide_Wide_Fixed, Ada.Wide_Wide_Text_IO;
+with Lib.Console, Lib.Text, Lib.Sets, Lib.Process, Lib.Strings, Ada.Strings.Wide_Wide_Fixed, Ada.Wide_Wide_Text_IO;
 use Lib, Lib.Strings;
 
 package body Terminal is
 
-   package Maps renames Ada.Strings.Wide_Wide_Maps;
    package Fixed renames Ada.Strings.Wide_Wide_Fixed;
 
    package WIO renames Ada.Wide_Wide_Text_IO;
